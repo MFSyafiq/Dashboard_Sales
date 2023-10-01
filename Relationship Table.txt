@@ -1,0 +1,14 @@
+--- Relationship produt_category <=> products -- 
+alter table products
+add constraint fk_category
+foreign key (category) references product_category (CategoryID);
+
+--- Relationship orders <=> products -- 
+alter table orders
+add constraint fk_prodnumber
+foreign key (prodnumber) references products (prodnumber);
+
+--- Relationship customers <=> products -- 
+alter table products
+add constraint fk_customerid
+foreign key (CustomerID) references products (CustomerID);
