@@ -1,0 +1,9 @@
+create table report as (
+select od.date as order_date, ctg.CategoryName as category_name, pd.ProdName as product_name, pd.Price as product_price, od.Quantity as order_qty, od.Quantity * pd.Price as total_sales, cs.CustomerEmail as cust_email, cs.CustomerCity as cust_city
+from customers as cs 
+join orders as od on cs.customerid = od.customerid
+join products as pd on od.ProdNumber = pd.ProdNumber
+join product_category as ctg on pd.Category = ctg.Categoryid
+group by 1,2,3,4,5,6,7,8
+order by date
+)
