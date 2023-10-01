@@ -1,0 +1,36 @@
+-- Create Table product --
+create table products (
+	ProdNumber varchar primary key,
+	ProdName varchar,
+	Category integer,
+	Price smallint
+);
+
+-- Create Table product_category --
+create table product_category (
+	CategoryID integer primary key,
+	CategoryName varchar,
+	CategoryAbbreviation varchar,
+);
+
+-- Create Table orders -- 
+create table orders (
+	OrderID integer primary key,
+	Date date,
+	CustomerID integer,
+	ProdNumber varchar,
+	Quantity integer
+);
+
+-- Create Table customers -- 
+create table customers (
+	CustomerID varchar primary key,
+	FirstName varchar,
+	LastName varchar,
+	CustomerEmail varchar,
+	CustomerPhone varchar,
+	CustomerAddress varchar,
+	CustomerCity varchar,
+	CustomerState varchar,
+	CustomerZip varchar
+);
